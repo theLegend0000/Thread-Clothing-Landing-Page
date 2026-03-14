@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+.montserrat-heading {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+.montserrat-body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+body{
+    background-color: #040514;
+    position: relative;
+    min-height: 100vh;
+    color: white;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgba(4, 5, 20, 0.75);
+  background-blend-mode: multiply;        
+  z-index: -1;
+}
+
+/* navbar code */
+
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    padding: 0 3.5%;
+}
+
+nav .pages{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 0 80px;
+}
+
+nav ul li{
+    transition: all 0.3s ease;
+}
+
+nav ul li:hover{
+    transform: translateY(-1px);
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav .icons{
+    display: flex;
+    gap: 0 10px;
+}
+
+nav .icons img{
+    height: 22px;
+    width: 22px;
+    filter: invert(1);
+}
+
+nav i{
+    display: none;
+}
+
+/* RESPONSIVE NAVBAR */
+
+@media (max-width: 768px) {
+
+    nav i{
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    nav .pages{
+        position: static;
+        transform: none;
+        font-size: 1rem;
+    }
+
+    nav .icons img{
+        display: none;
+    }
+
+    nav ul{
+        opacity: 0;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        gap: 30px 0;
+        border-radius: 10px;
+        border-left: 1px solid #8b90db;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        background: rgba(0,0,0,0.9);
+        transition: all 0.5s ease-in-out;
+    }
+
+    nav ul.active{
+        display: flex;
+        opacity: 1;
+    }
+}
+
+/* main-section code */
+
+.main-section{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 10px;
+    margin-top: 2vh;
+
+}
+
+.main-section .left-section{
+    font-size: 2.5rem;
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.hero-title{
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.hero-title span{
+    display: block;
+}
+
+
+.main-section button{
+    padding: 14px 38px;
+    border-radius: 40px;
+    border: none;
+    background: white;
+    color: #040514;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 18px 15px rgba(0, 0, 0, 0.25);
+}
+
+.main-section button:hover{
+    transform: translateY(-2px);
+    box-shadow: inset 0 19px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.main-section .right-section{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main-section .right-section img{
+    width: 460px;
+    max-width: 100%;
+}
+
+
+/* RESPONSIVE MAIN CONTAINER */
+
+@media (max-width: 768px) {
+    
+    .main-section{
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px 0;
+    }
+
+    .hero-title{
+        font-size: 2rem;
+    }
+
+    .main-section .left-section, .main-section .right-section{
+        width: 100%;
+    }
+
+    .main-section .left-section{
+        gap: 50px 0;
+    }
+
+    .main-section .right-section{
+        justify-content: center;
+        align-items: center;
+    }
+    .main-section .right-section img{
+        width: 70%;
+        max-width: 100%;
+    }
+
+    .main-section button{
+        padding: 10px 22px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+    }
+    
+}
+
+/* shirt-section code */
+
+.shirt-section{
+    width: 100%;
+    max-width: 1200px;
+    margin: 3vh auto 0;
+    display: flex;
+    gap: 20px;
+}
+
+.shirt-container{
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 22px;
+    max-width: 446px;
+    transition: all 0.3s ease;
+}
+
+.shirt-container:hover{
+    transform: translateY(-2px);
+}
+
+.tshirt{
+    box-shadow: 0 7px 25px rgba(80 216 131/0.25);
+}
+
+.shirt{
+    box-shadow: 0 7px 25px rgba(219 159 128/0.25);
+}
+
+.newArrival{
+    box-shadow: 0 7px 25px rgba(207, 156, 234, 0.25)
+
+}
+
+.image-container{
+    flex: 1;
+    background: rgb(255 255 255 / 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details{
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.details h2{
+    font-size: 1.6rem;
+}
+
+.details h5{
+    font-weight:500;
+}
+
+
+.details hr{
+    width: 80%;
+}
+
+.price{
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.details ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.details button{
+    font-weight: 550;
+    margin-top: auto;
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 18px 15px rgba(0, 0, 0, 0.25);
+}
+
+.details button:hover{
+    transform: translateY(-2px);
+    box-shadow: inset 0 19px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* RESPONSIVE SHIRT CONTAINER */
+
+@media (max-width: 768px) {
+    
+    .shirt-section{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shirt-container{
+        max-width: 80%;
+    }
+
+    .image-container img{
+        object-fit: contain;
+    }
+
+    .details{
+        font-size: 0.8rem;
+    }
+
+    .details .price{
+        font-size: 1.6rem;
+    }
+
+    .details button{
+        padding: 10px 12px;
+        border-radius: 15px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Footer Code */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7vh auto 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+footer .left{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer .left span:first-child{
+    font-weight: 500;
+}
+footer .left span{
+    display: block;
+}
+
+footer .center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0;
+    line-height: 0.9;
+}
+
+footer ul{
+    display: flex;
+    list-style: none;
+    gap: 0 20px;
+    font-size: 0.9rem;
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: 250;
+}
+
+footer .center h5{
+    font-size: 0.8rem;
+    font-weight: 250;
+}
+
+footer .right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer .right h5{
+    font-weight: 250;
+}
+
+/* RESPONSIVE FOOTER */
+
+@media (max-width: 768px) {
+
+    footer{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1px 10px;
+    }
+
+    footer ul, footer .right{
+        display: none;
+    }
+
+    footer .left{
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    footer .center h5{
+        font-size: 0.8rem;
+    }
+
+}
+
