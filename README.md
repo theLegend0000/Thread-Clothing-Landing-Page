@@ -34,6 +34,6 @@ https://thread-clothing.vercel.app/
 ## Preview
 
 ![Thread Landing Page](preview.jpg)
-
+![Thread Landing Page (Mobile)](preview-mobile.jpg)
 
 ---
